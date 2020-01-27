@@ -23,7 +23,7 @@ namespace MIS4200
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrapPurple.css",
+                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
     }
