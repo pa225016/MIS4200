@@ -13,7 +13,7 @@ namespace MIS4200.DAL
         public MIS4200Context() : base("name=DefaultConnection")
         {
             // add the SetInitializer statement here
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Context,MIS4200.Migrations.MIS4200Context.Configuration>("DefaultConnection"));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MIS4200Context,MIS4200.Migrations.MISContext.Configuration>("DefaultConnection"));
         }
         // this method is a 'constructor' and is called when a new context is created
         // the base attribute says which connection string to use
@@ -25,10 +25,11 @@ namespace MIS4200.DAL
         public DbSet<Owner> Owners { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        // add this method - it will be used later
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
-    // add this method - it will be used later
-    //protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //{
-        //base.OnModelCreating(modelBuilder);
-    //}
+   
 }
