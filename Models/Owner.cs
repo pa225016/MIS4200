@@ -9,13 +9,35 @@ namespace MIS4200.Models
     using System.Collections.Generic;
     using System.Linq;
     using System.Web;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     public class Owner
     {
         public int OwnerId { get; set; }
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name is required!")]
+        [StringLength(20)]
         public string firstName { get; set; }
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name is required!")]
+        [StringLength(20)]
         public string lastName { get; set; }
+
+        [Display(Name = "Email Address")]
+        [Required]
+        [EmailAddress(ErrorMessage = "Enter your most frequently used email address")]
         public string email { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\(d{3}\) |\d{3}-)\d{3}-\d{4}$", ErrorMessage = "Format: (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string phone { get; set; }
+
+        [Display(Name = "When did you join?")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime customerSince { get; set; }
 
         // add any other fields as appropriate
