@@ -20,9 +20,9 @@ namespace MIS4200.Models
         [StringLength(20)]
         public string firstName { get; set; }
 
-        [Display(Name = "First Name")]
-        [Required(ErrorMessage = "First Name is required!")]
-        [StringLength(20)]
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name is required!")]
+        [StringLength(25)]
         public string lastName { get; set; }
 
         [Display(Name = "Email Address")]
@@ -31,6 +31,7 @@ namespace MIS4200.Models
         public string email { get; set; }
 
         [Display(Name = "Phone Number")]
+        [Required]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^(\(d{3}\) |\d{3}-)\d{3}-\d{4}$", ErrorMessage = "Format: (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string phone { get; set; }
