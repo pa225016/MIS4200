@@ -36,7 +36,7 @@ namespace MIS4200.Models
         [RegularExpression(@"^(\(d{3}\) |\d{3}-)\d{3}-\d{4}$", ErrorMessage = "Format: (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string phone { get; set; }
 
-        [Display(Name = "When did you join?")]
+        [Display(Name = "Date Joined")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime customerSince { get; set; }

@@ -22,7 +22,7 @@ namespace MIS4200.Models
         // the next two properties link the orderDetail to the Order
         public int orderID { get; set; }
         public virtual Order Order { get; set; }
-        // the next two properties link the orderDetail to the Product
+        // the next two properties link the orderDetail to the Car
         public int carID { get; set; }
         public virtual Car Car { get; set; }
     }

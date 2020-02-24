@@ -26,7 +26,7 @@ namespace MIS4200.Models
         public ICollection<OrderDetail> OrderDetail { get; set; }
         //Order is on the Many side of the one-to-many relation between Customer
         //and Order and we represent that relationship like this
-        [Display(Name = "Customer ID")]
+        [Display(Name = "Customer")]
         [Required]
         public int customerID { get; set; }
         public virtual Owner Owner { get; set; }
